@@ -3,13 +3,13 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-<title>Kỷ niệm của Linh Đan ✨</title>
+<title>Linh Đan ✨</title>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23FF1493'%3E%3Cpath d='M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z'/%3E%3C/svg%3E" />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Quicksand:wght@400;500;600&display=swap" rel="stylesheet">
 
 <style>
-/* ============ RESET + BIẾN MÀU HỒNG ============ */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 :root {
@@ -21,7 +21,6 @@
   --shadow-strong: 0 25px 60px rgba(255, 20, 147, .45);
   --face-w: 240px;
   --face-h: 440px;
-  /* Tăng bán kính vòng tròn để ảnh cách xa nhau hơn */
   --face-r: 260px; 
 }
 
@@ -36,7 +35,6 @@ html, body {
   user-select: none;
 }
 
-/* ============ BACKGROUND EFFECTS: BUBBLE ============ */
 .bubble-container {
   position: fixed;
   inset: 0;
@@ -57,7 +55,6 @@ html, body {
   100% { transform: translateY(-120vh) scale(1.2) rotate(360deg); opacity: 0; }
 }
 
-/* ============ BACKGROUND EFFECTS: SPARKLE ============ */
 .sparkle {
   position: fixed;
   width: 4px; height: 4px;
@@ -73,7 +70,6 @@ html, body {
   50% { opacity: 1; transform: scale(1.5) rotate(180deg); }
 }
 
-/* ============ BACKGROUND EFFECTS: SHOOTING STAR ============ */
 .shooting-star {
   position: fixed;
   width: 120px;
@@ -91,7 +87,6 @@ html, body {
   100% { transform: translate(-140vw, 140vh) rotate(-35deg) scale(1.5); opacity: 0; }
 }
 
-/* ============ HEADER ============ */
 header {
   position: relative;
   z-index: 10;
@@ -113,7 +108,6 @@ header p {
   opacity: .8;
 }
 
-/* ============ SCENE 3D (Đã nâng cấp khoảng cách) ============ */
 .scene {
   position: relative;
   z-index: 5;
@@ -122,7 +116,6 @@ header p {
   display: flex;
   align-items: center;
   justify-content: center;
-  /* Tăng perspective để bao quát vòng tròn ảnh to hơn */
   perspective: 5000px; 
   overflow: visible;
   touch-action: none;
@@ -152,7 +145,6 @@ header p {
   z-index: 2;
 }
 
-/* Đặt 5 mặt bên */
 .face[data-i="0"] { transform: rotateY(  0deg) translateZ(var(--face-r)); }
 .face[data-i="1"] { transform: rotateY( 72deg) translateZ(var(--face-r)); }
 .face[data-i="2"] { transform: rotateY(144deg) translateZ(var(--face-r)); }
@@ -180,7 +172,6 @@ header p {
   pointer-events: none;
 }
 
-/* Sticker góc mặt */
 .sticker {
   position: absolute;
   font-size: 26px;
@@ -197,7 +188,6 @@ header p {
   50%      { transform: rotate(10deg) scale(1.08); }
 }
 
-/* Ánh sáng trượt qua mặt chính diện */
 .face.front::after {
   content: '';
   position: absolute; inset: 0;
@@ -215,7 +205,6 @@ header p {
   100% { background-position: -220% 0; }
 }
 
-/* Sticker lơ lửng quanh prism */
 .float-sticker {
   position: absolute;
   font-size: 28px;
@@ -232,7 +221,6 @@ header p {
   75%      { transform: translateZ(-250px) translate(-10px,-4px) rotate(10deg); }
 }
 
-/* ============ NÚT ĐIỀU HƯỚNG ============ */
 .nav-btn {
   position: absolute;
   top: 50%;
@@ -256,7 +244,6 @@ header p {
 .nav-btn.next { right: 12px; }
 @media (min-width: 768px) { .nav-btn { display: block; } }
 
-/* ============ COUNTER ============ */
 .counter {
   position: absolute;
   bottom: 30px;
@@ -273,7 +260,6 @@ header p {
   box-shadow: 0 4px 14px rgba(255, 105, 180, .25);
 }
 
-/* ============ SWIPE HINT ============ */
 .swipe-hint {
   position: absolute;
   bottom: 90px;
@@ -292,7 +278,6 @@ header p {
 }
 @media (min-width: 768px) { .swipe-hint { display: none; } }
 
-/* ============ POPUP ============ */
 .popup-overlay {
   position: fixed;
   inset: 0;
@@ -340,12 +325,10 @@ header p {
 @keyframes fadeBgOut { to { opacity: 0; } }
 @keyframes popOut { to { opacity: 0; transform: scale(.7); } }
 
-/* ============ RESPONSIVE ============ */
 @media (max-width: 600px) {
   :root {
     --face-w: 200px;
     --face-h: 280px;
-    /* Mobile vẫn giữ khoảng cách hợp lý */
     --face-r: 180px; 
   }
   .sticker { font-size: 22px; }
@@ -355,16 +338,12 @@ header p {
 </head>
 <body>
 
-<!-- ====== AUDIO PLAYER (ẨN) ====== -->
 <audio id="bgMusic" loop>
-  <!-- Nhạc nền chill không lời. Bạn có thể đổi link này sang MP3 khác nếu muốn -->
   <source src="1.mp3" type="audio/mpeg">
 </audio>
 
-<!-- ====== BACKGROUND BUBBLES & SPARKLES (JS Sẽ tạo vào đây) ====== -->
 <div class="bubble-container" id="bubbleContainer"></div>
 
-<!-- ====== POPUP HỎI ====== -->
 <div class="popup-overlay" id="popup">
   <div class="popup-box">
     <div class="heart">💖</div>
@@ -377,13 +356,11 @@ header p {
   </div>
 </div>
 
-<!-- ====== HEADER ====== -->
 <header>
   <h1>✨ Kỷ niệm của Linh Đan ✨</h1>
   <p>vuốt / kéo để xoay hộp nhé</p>
 </header>
 
-<!-- ====== SCENE 3D ====== -->
 <div class="scene" id="scene">
   <button class="nav-btn prev" id="prevBtn">‹</button>
   <button class="nav-btn next" id="nextBtn">›</button>
@@ -393,31 +370,28 @@ header p {
 </div>
 
 <script>
-/* ============ DỮ LIỆU ============ */
 const photos = [
-  { src: 'https://picsum.photos/id/64/600/800',  caption: 'Khoảnh khắc dễ thương' },
-  { src: 'https://picsum.photos/id/91/600/800',  caption: 'Nắng chiều' },
-  { src: 'https://picsum.photos/id/177/600/800', caption: 'Nụ cười rạng rỡ' },
-  { src: 'https://picsum.photos/id/338/600/800', caption: 'Bình yên' },
-  { src: 'https://picsum.photos/id/447/600/800', caption: 'Một ngày đẹp' }
+  { src: '1.jpg',  caption: 'Khoảnh khắc dễ thương' },
+  { src: '2.jpg',  caption: 'Nắng chiều' },
+  { src: '3.png', caption: 'Nụ cười rạng rỡ' },
+  { src: '4.png', caption: 'Bình yên' },
+  { src: '5.jpg', caption: 'Một ngày đẹp' }
 ];
 
 const STICKERS = ['💖','✨','🌸','🎀','⭐','🦋'];
 const CORNER_POS = ['tl','tr','br','bl'];
 
-// ====== BIẾN ÂM NHẠC ======
 const audio = document.getElementById('bgMusic');
 let audioStarted = false;
 
 function startAudio() {
   if (!audioStarted) {
-    audio.volume = 0.5; // Chỉnh âm lượng nhỏ vừa phải
+    audio.volume = 1;
     audio.play().catch(e => console.log("Chưa phát được nhạc do trình duyệt chặn"));
     audioStarted = true;
   }
 }
 
-/* ============ POPUP LOGIC ============ */
 const popupMsg = document.getElementById('popupMsg');
 const popupOverlay = document.getElementById('popup');
 
@@ -435,7 +409,6 @@ function closePopup() {
   setTimeout(() => { popupOverlay.style.display = 'none'; }, 350);
 }
 
-// Bấm Yes hoặc No đều bật nhạc và đóng popup
 document.getElementById('btnYes').addEventListener('click', () => {
   startAudio();
   closePopup();
@@ -443,7 +416,7 @@ document.getElementById('btnYes').addEventListener('click', () => {
 
 document.getElementById('btnNo').addEventListener('click', () => {
   noCount++;
-  startAudio(); // Bật nhạc khi bấm nút từ chối
+  startAudio();
   if (noCount >= 3) { closePopup(); return; }
   let next;
   do { next = noMessages[Math.floor(Math.random() * noMessages.length)]; } 
@@ -454,8 +427,6 @@ document.getElementById('btnNo').addEventListener('click', () => {
   setTimeout(() => { box.style.animation = 'popIn .4s ease'; }, 10);
 });
 
-/* ============ BACKGROUND EFFECTS ============ */
-// 1. Bubble
 function createBubbles() {
   const container = document.getElementById('bubbleContainer');
   for(let i=0; i<25; i++) {
@@ -472,7 +443,6 @@ function createBubbles() {
 }
 createBubbles();
 
-// 2. Sparkles
 function createSparkles() {
   for (let i = 0; i < 30; i++) {
     const sp = document.createElement('div');
@@ -488,7 +458,6 @@ function createSparkles() {
 }
 createSparkles();
 
-// 3. Shooting Stars
 function shootStar() {
   const star = document.createElement('div');
   star.className = 'shooting-star';
@@ -498,9 +467,8 @@ function shootStar() {
   document.body.appendChild(star);
   setTimeout(() => star.remove(), 3000);
 }
-setInterval(shootStar, 3500); // Cứ 3.5s lại có 1 sao băng bay qua
-
-/* ============ TẠO 5 MẶT LĂNG TRỤ ============ */
+setInterval(shootStar, 3500); 
+  
 const prism = document.getElementById('prism');
 const scene = document.getElementById('scene');
 const counter = document.getElementById('counter');
@@ -534,7 +502,6 @@ photos.forEach((p, i) => {
   faces.push(face);
 });
 
-/* ============ STICKER LƠ LỬNG ============ */
 function spawnFloaters() {
   const stage = scene;
   const rectW = prism.offsetWidth;
@@ -555,7 +522,6 @@ function spawnFloaters() {
 }
 spawnFloaters();
 
-/* ============ 3D ROTATION LOGIC ============ */
 const STEP = 72;
 let targetRotY = 0;
 let targetRotX = 0;
@@ -602,7 +568,6 @@ function tick() {
 }
 requestAnimationFrame(tick);
 
-/* ============ DRAG EVENTS ============ */
 function posOf(e) {
   if (e.touches && e.touches.length) return [e.touches[0].clientX, e.touches[0].clientY];
   return [e.clientX, e.clientY];
@@ -637,7 +602,6 @@ scene.addEventListener('touchmove', onMove, { passive: false });
 scene.addEventListener('touchend', onUp);
 scene.addEventListener('touchcancel', onUp);
 
-/* ============ BUTTONS & KEYS ============ */
 function rotateToNearest(step) {
   const snapped = Math.round(targetRotY / STEP) * STEP;
   targetRotY = snapped + step; velY = 0; lastInteractTime = performance.now();
